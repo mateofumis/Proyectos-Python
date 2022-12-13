@@ -23,7 +23,7 @@ def main():
     num = input("Longitud de la contraseña: ")
     num = int(num)
     contrasena = passwordGenerator(num)
-    print(f"Contraseña aleatoria y segura generada correctamente: \n\n{contrasena}\n")
+    print(f"Contraseña aleatoria y segura generada correctamente: {contrasena}")
 
 if __name__ == "__main__":
     main()
