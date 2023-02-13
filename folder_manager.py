@@ -1,5 +1,9 @@
+'''
+Author: Mateo Fumis | Github: github.com/mateofumis | LinkedIn: linkedin.com/in/mateo-gabriel-fumis
+'''
 import os
 import sys
+
 # Obtener Path actual
 pwd = os.getcwd()
 
