@@ -17,7 +17,7 @@ def mkdir():
         what_now()
     else:
         os.mkdir(new_folder_path)
-        print("\n[+] Se creó el directorio con éxito en la siguiente ruta: ", new_folder_path)
+        print("\n[+] Se creó la carpeta con éxito en la siguiente ruta: ", new_folder_path)
         what_now()
 
 def rmdir():
@@ -27,11 +27,16 @@ def rmdir():
     # Valdiar que la carpeta a borrar existe
     if os.path.exists(folder_to_delete):
         os.rmdir(folder_to_delete_path)
-        print("\n[+]Se borró con éxito el siguiente directorio: ", folder_to_delete_path)
+        print("\n[+] Se borró con éxito la carpeta:", folder_to_delete)
         what_now()
     else:
         print("\n[-] La carpeta no existe, por favor intente con otro nombre")
     what_now()
+
+def list_direcory():
+    files_in_pwd = os.listdir(path=pwd) # Obtener la lista de archivos en el path actual
+    print(f"Los archivos que se encuentran en el directorio actual son:\n{files_in_pwd}")
+    menu()
 
 # Definir función para decidir qué hacer luego
 def what_now():
@@ -51,18 +56,23 @@ def what_now():
 
 # Mostrar menú de opciones
 def menu():
-    options = '''1) Crear carpta
+    options = '''
+1) Crear carpta
 2) Borrar carpeta
-3) Salir del script'''
+3) Listar los archivos de la directorio actual
+0) Salir del script
+'''
     print(options)
     choice = input("Seleccione una opción: ")
     if choice == "1":
         mkdir()
     elif choice == "2":
         rmdir()
-    elif choice == "3":
+    elif choice == "0":
         print("[+] Saliendo del script...")
         sys.exit()
+    elif choice == "3":
+        list_direcory()
     else:
         print("[-] Opción incorrecta")
         menu() 
