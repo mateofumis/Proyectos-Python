@@ -33,7 +33,7 @@ def rmdir():
         print("\n[-] La carpeta no existe, por favor intente con otro nombre")
     what_now()
 
-def list_direcory():
+def list_directory():
     files_in_pwd = os.listdir(path=pwd) # Obtener la lista de archivos en el path actual
     print(f"Los archivos que se encuentran en el directorio actual son:\n{files_in_pwd}")
     menu()
@@ -72,7 +72,7 @@ def menu():
         print("[+] Saliendo del script...")
         sys.exit()
     elif choice == "3":
-        list_direcory()
+        list_directory()
     else:
         print("[-] Opción incorrecta")
         menu() 
