@@ -23,23 +23,27 @@ def rmdir():
     # Valdiar que la carpeta a borrar existe
     if os.path.exists(folder_to_delete):
         os.rmdir(folder_to_delete_path)
+        print("\n[+]Se borró con éxito el siguiente directorio: ", folder_to_delete_path)
         what_now()
     else:
-        print("[-] La carpeta ya existe, por favor intente con otro nombre")
+        print("\n[-] La carpeta no existe, por favor intente con otro nombre")
     what_now()
 
 # Definir función para decidir qué hacer luego
 def what_now():
     wanna = input("\n[+] ¿Desea volver al menú? (yes/y) - (no/n): ")
-    if wanna not in ("yes","y","no","n"):
-        print("[-] Opción NO VALIDA")
-        print("(yes/y) - (no/n)")
-        what_now()
-    elif wanna == "yes" or "y":
+    if wanna == "yes":
         menu()
-    elif wanna == "no" or "n":
-        print("[+] Saliendo del script...")
+    elif wanna == "y":
+        menu()
+    elif wanna == "no":
         sys.exit()
+    elif wanna == "n":
+        sys.exit()
+    else:
+        print("[-] Opción incorrecta")
+        what_now()
+
 
 # Mostrar menú de opciones
 def menu():
