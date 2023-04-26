@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 '''
 Author: Mateo Fumis | Github: github.com/mateofumis | LinkedIn: linkedin.com/in/mateo-gabriel-fumis
 '''
